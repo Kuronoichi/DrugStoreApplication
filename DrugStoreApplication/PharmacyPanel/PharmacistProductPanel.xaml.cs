@@ -6,7 +6,7 @@ namespace DrugStoreApplication.PharmacyPanel;
 
 public partial class PharmacistProductPanel : Window
 {
-    private readonly Service service;
+    private Service service;
     private Product selectedProduct;
     
     public PharmacistProductPanel()
@@ -18,6 +18,7 @@ public partial class PharmacistProductPanel : Window
 
     private void Load()
     {
+        service = new Service();
         ProductsGrid.ItemsSource = service.GetProducts();
     }
 
@@ -97,5 +98,10 @@ public partial class PharmacistProductPanel : Window
                 .ToList();
             ProductsGrid.ItemsSource = filteredProducts;
         }
+    }
+
+    private void BTN_Update_OnClick(object sender, RoutedEventArgs e)
+    {
+        Load();
     }
 }

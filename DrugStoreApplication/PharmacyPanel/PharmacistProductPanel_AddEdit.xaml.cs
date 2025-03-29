@@ -92,7 +92,7 @@ public partial class PharmacistProductPanel_AddEdit : Window
                     ShowSuccess("Товар изменён успешно!");
             }
             
-            this.Close();
+            Close();
         }
 
         private bool ValidateInput()

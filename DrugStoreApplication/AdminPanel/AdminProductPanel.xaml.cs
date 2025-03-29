@@ -6,7 +6,7 @@ namespace DrugStoreApplication.AdminPanel;
 
 public partial class AdminProductPanel : Window
 {
-    private readonly Service service;
+    private Service service;
     private Product selectedProduct;
     
     public AdminProductPanel()
@@ -18,13 +18,15 @@ public partial class AdminProductPanel : Window
 
     private void Load()
     {
+        service = new Service();
         ProductsGrid.ItemsSource = service.GetProducts();
     }
 
     private void BTN_Add_OnClick(object sender, RoutedEventArgs e)
     {
-        new AdminProductPanel_AddEdit().ShowDialog();
-        Load();
+        var addWindow = new AdminProductPanel_AddEdit();
+        addWindow.Closed += (s, args) => Load();
+        addWindow.ShowDialog();
     }
 
     private void BTN_Edit_OnClick(object sender, RoutedEventArgs e)
@@ -35,8 +37,9 @@ public partial class AdminProductPanel : Window
             return;
         }
         
-        new AdminProductPanel_AddEdit(selectedProduct).ShowDialog();
-        Load();
+        var addWindow = new AdminProductPanel_AddEdit(selectedProduct);
+        addWindow.Closed += (s, args) => Load();
+        addWindow.ShowDialog();
     }
 
     private void BTN_Delete_OnClick(object sender, RoutedEventArgs e)
@@ -109,5 +112,10 @@ public partial class AdminProductPanel : Window
                 .ToList();
             ProductsGrid.ItemsSource = filteredProducts;
         }
+    }
+
+    private void BTN_Update_OnClick(object sender, RoutedEventArgs e)
+    {
+        Load();
     }
 }

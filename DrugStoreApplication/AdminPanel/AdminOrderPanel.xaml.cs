@@ -18,13 +18,14 @@ public partial class AdminOrderPanel : Window
 
         private void Load()
         {
+            service = new Service();
             OrdersGrid.ItemsSource = service.GetOrders();
         }
 
         private void BTN_Edit_OnClick(object sender, RoutedEventArgs e)
         {
-            new AdminOrderPanel_AddEdit(order).ShowDialog();
-            Load();
+            var addWindow = new AdminOrderPanel_AddEdit(order);
+            addWindow.Show();
         }
 
         private void BTN_Delete_OnClick(object sender, RoutedEventArgs e)
@@ -43,12 +44,14 @@ public partial class AdminOrderPanel : Window
             }
             
             MessageBox.Show("Успешное удаление заказа", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            Load();
         }
 
         private void BTN_Add_OnClick(object sender, RoutedEventArgs e)
         {
-            new AdminOrderPanel_AddEdit().ShowDialog();
-            Load();
+            var addWindow = new AdminOrderPanel_AddEdit();
+            addWindow.Closed += (s, args) => Load();
+            addWindow.ShowDialog();
         }
 
         private void OrdersGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,5 +87,10 @@ public partial class AdminOrderPanel : Window
         {
             new AdminUserPanel().Show();
             Close();
+        }
+
+        private void BTN_Update_OnClick(object sender, RoutedEventArgs e)
+        {
+            Load();
         }
 }

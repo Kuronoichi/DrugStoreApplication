@@ -32,7 +32,6 @@ public partial class AdminOrderPanel_AddEdit : Window
         
         private void Load()
         {
-            ProductsGrid.ItemsSource = service.GetProducts();
             SupplierComboBox.ItemsSource = service.GetSuppliers();
         }
 

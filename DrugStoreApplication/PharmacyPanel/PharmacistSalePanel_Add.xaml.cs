@@ -153,9 +153,9 @@ public partial class PharmacistSalePanel_Add : Window
                 MessageBoxButton.OK, MessageBoxImage.Information);
             Close();
         }
-        catch (Exception ex)
+        catch
         {
-            MessageBox.Show($"Ошибка добавления продажи: {ex.Message}", "Ошибка",
+            MessageBox.Show($"Ошибка добавления продажи", "Ошибка",
                 MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }

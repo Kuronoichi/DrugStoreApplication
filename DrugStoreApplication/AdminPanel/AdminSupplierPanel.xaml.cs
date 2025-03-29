@@ -7,7 +7,7 @@ namespace DrugStoreApplication;
 
 public partial class AdminSupplierPanel : Window
 {
-    private readonly Service service;
+    private Service service;
     private Supplier selectedSupplier;
     public AdminSupplierPanel()
     {
@@ -18,6 +18,7 @@ public partial class AdminSupplierPanel : Window
 
     private void Load()
     {
+        service = new Service();
         SuppliersGrid.ItemsSource = service.GetSuppliers();
     }
 
@@ -89,5 +90,10 @@ public partial class AdminSupplierPanel : Window
     private void SuppliersGrid_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         selectedSupplier = SuppliersGrid.SelectedItem as Supplier;
+    }
+
+    private void BTN_Update_OnClick(object sender, RoutedEventArgs e)
+    {
+        Load();
     }
 }

@@ -17,6 +17,7 @@ public partial class PharmacistSalePanel : Window
 
     private void Load()
     {
+        service = new Service();
         SalesGrid.ItemsSource = service.GetSales();
     }
     
@@ -63,5 +64,10 @@ public partial class PharmacistSalePanel : Window
             return;
         }
         MessageBox.Show("Успешное удаление продажи","Успех",MessageBoxButton.OK, MessageBoxImage.Information);
+    }
+
+    private void BTN_Update_OnClick(object sender, RoutedEventArgs e)
+    {
+        Load();
     }
 }

@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:DrugStoreApplication.AdminPanel"
         mc:Ignorable="d"
-        Title="Заказы" Height="600" Width="1000" ResizeMode="NoResize">
+        Title="Заказы" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -51,6 +51,7 @@
                 <Button x:Name="BTN_Add" Content="Добавить" Width="120" Margin="5" Click="BTN_Add_OnClick"/>
                 <Button x:Name="BTN_Edit" Content="Изменить" Width="120" Margin="5" Click="BTN_Edit_OnClick"/>
                 <Button x:Name="BTN_Delete" Content="Удалить" Width="120" Margin="5" Click="BTN_Delete_OnClick"/>
+                <Button x:Name="BTN_Update" Content="Обновить" Width="120" Margin="5" Click="BTN_Update_OnClick"/>
             </StackPanel>
 
             <DataGrid Grid.Row="2" x:Name="OrdersGrid" AutoGenerateColumns="False" Margin="5"

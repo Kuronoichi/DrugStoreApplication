@@ -173,3 +173,4 @@ C:\Users\user\RiderProjects\DrugStoreApplication\DrugStoreApplication\obj\Debug\
 C:\Users\user\RiderProjects\DrugStoreApplication\DrugStoreApplication\obj\Debug\net8.0-windows\PharmacyPanel\PharmacistSalePanel.baml
 C:\Users\user\RiderProjects\DrugStoreApplication\DrugStoreApplication\obj\Debug\net8.0-windows\PharmacyPanel\PharmacistSalePanel_Add.baml
 C:\Users\user\RiderProjects\DrugStoreApplication\DrugStoreApplication\obj\Debug\net8.0-windows\PharmacyPanel\PharmacistWindow.baml
+C:\Users\user\RiderProjects\DrugStoreApplication\DrugStoreApplication\obj\Debug\net8.0-windows\DrugStoreApplication.sourcelink.json

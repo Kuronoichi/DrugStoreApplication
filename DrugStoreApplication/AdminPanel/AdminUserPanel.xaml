@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:DrugStoreApplication"
         mc:Ignorable="d"
-        Title="Пользователи" Height="600" Width="800">
+        Title="Пользователи" Height="600" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -40,6 +40,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
@@ -51,6 +52,7 @@
                 <Button x:Name="BTN_Add" Content="Добавить" Width="120" Margin="5" Click="BTN_Add_OnClick"/>
                 <Button x:Name="BTN_Edit" Content="Изменить" Width="120" Margin="5" Click="BTN_Edit_OnClick"/>
                 <Button x:Name="BTN_Delete" Content="Удалить" Width="120" Margin="5" Click="BTN_Delete_OnClick"/>
+                <Button x:Name="BTN_Update" Content="Обновить" Width="120" Margin="5" Click="BTN_Update_OnClick"/>
             </StackPanel>
             
             <DataGrid Grid.Row="2" x:Name="UsersGrid" AutoGenerateColumns="False" 

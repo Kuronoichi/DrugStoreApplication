@@ -92,8 +92,7 @@ namespace DrugStoreApplication
                 else
                     ShowSuccess("Товар изменён успешно!");
             }
-            
-            this.Close();
+            Close();
         }
 
         private bool ValidateInput()

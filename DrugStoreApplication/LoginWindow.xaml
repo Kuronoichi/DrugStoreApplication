@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrugStoreApplication"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="600" Width="800" ResizeMode="NoResize">
+        Title="LoginWindow" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.25*"/>

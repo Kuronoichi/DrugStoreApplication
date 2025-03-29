@@ -7,7 +7,7 @@ namespace DrugStoreApplication;
 
 public partial class AdminUserPanel : Window
 {
-    private readonly Service service;
+    private Service service;
     private User selectedUser;
     public AdminUserPanel()
     {
@@ -18,6 +18,7 @@ public partial class AdminUserPanel : Window
 
     private void load()
     {
+        service = new Service();
         UsersGrid.ItemsSource = service.GetUsers();
     }
 
@@ -92,5 +93,10 @@ public partial class AdminUserPanel : Window
         selectedUser = UsersGrid.SelectedItem as User;
         BTN_Edit.IsEnabled = selectedUser != null && selectedUser.Role.Name != "Админ";
         BTN_Delete.IsEnabled = selectedUser != null && selectedUser.Role.Name != "Админ";
+    }
+
+    private void BTN_Update_OnClick(object sender, RoutedEventArgs e)
+    {
+        load();
     }
 }

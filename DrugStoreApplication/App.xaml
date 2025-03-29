@@ -6,6 +6,7 @@
     <Application.Resources>
          <Style TargetType="Button" x:Key="Menu_Button">
              <Setter Property="Margin" Value="5"/>
+             <Setter Property="Background" Value="Bisque"/>
              <Setter Property="BorderThickness" Value="5"/>
              <Setter Property="BorderBrush" Value="DarkRed"/>
              <Style.Resources>
@@ -14,5 +15,60 @@
                  </Style>
              </Style.Resources>
          </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Bisque"/>
+            <Setter Property="BorderBrush" Value="DarkRed"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="Bisque"/>
+            <Setter Property="BorderBrush" Value="DarkRed"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+        
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="Beige"/>
+        </Style>
+        
+        <Style TargetType="DataGrid">
+            <Setter Property="BorderBrush" Value="OrangeRed"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Style.Resources>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="Bisque"/>
+                </Style>
+                <Style TargetType="DataGridRowHeader">
+                    <Setter Property="Background" Value="Bisque"/>
+                </Style>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="Bisque"/>
+                </Style>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
+        <Style TargetType="StackPanel">
+            <Setter Property="Background" Value="Beige"/>
+        </Style>
+        
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Bisque"/>
+            <Setter Property="BorderBrush" Value="OrangeRed"/>
+            <Setter Property="BorderThickness" Value="3"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+        </Style>
     </Application.Resources>
 </Application>

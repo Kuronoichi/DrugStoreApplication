@@ -61,7 +61,10 @@ public partial class AdminSupplierPanel_AddEdit : Window
             if (service.EditSupplier(_supplier.Id, TB_Name.Text, TB_Phone.Text) == -1)
                 MessageBox.Show("Ошибка изменения поставщика", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             else
+            {
                 MessageBox.Show("Поставщик изменён успешно!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            Close();
         }
     }
 

@@ -78,6 +78,7 @@ public partial class AdminUserPanel_AddEdit : Window
                 MessageBox.Show("Пользователь изменён успешно!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             return;
         }
+        Close();
         
 
     }

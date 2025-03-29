@@ -1,0 +1,69 @@
+<Window x:Class="DrugStoreApplication.AdminPanel.AdminOrderPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:DrugStoreApplication.AdminPanel"
+        mc:Ignorable="d"
+        Title="Заказы" Height="600" Width="1000" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Column="0" Background="LightCoral">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Source/logo.png"/>
+            
+            <Button Grid.Row="1" x:Name="BTN_Profile" Style="{StaticResource Menu_Button}" Content="Профиль" Click="BTN_Profile_OnClick"/>
+            
+            <Button Grid.Row="2" x:Name="BTN_Orders" Style="{StaticResource Menu_Button}" Content="Панель заказы" Click="BTN_Orders_OnClick"/>
+            
+            <Button Grid.Row="3" x:Name="BTN_Products" Style="{StaticResource Menu_Button}" Content="Панель Товары" Click="BTN_Products_OnClick"/>
+            
+            <Button Grid.Row="4" x:Name="BTN_Suppliers" Style="{StaticResource Menu_Button}" Content="Панель поставщики" Click="BTN_Suppliers_OnClick"/>
+            
+            <Button Grid.Row="5" x:Name="BTN_Users" Style="{StaticResource Menu_Button}" Content="Панель пользователи" Click="BTN_Users_OnClick"/>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Grid.Row="0" Text="Управление заказами" 
+                       FontSize="28" FontWeight="Bold" 
+                       HorizontalAlignment="Center" Margin="0 10"/>
+            
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10">
+                <Button x:Name="BTN_Add" Content="Добавить" Width="120" Margin="5" Click="BTN_Add_OnClick"/>
+                <Button x:Name="BTN_Edit" Content="Изменить" Width="120" Margin="5" Click="BTN_Edit_OnClick"/>
+                <Button x:Name="BTN_Delete" Content="Удалить" Width="120" Margin="5" Click="BTN_Delete_OnClick"/>
+            </StackPanel>
+
+            <DataGrid Grid.Row="2" x:Name="OrdersGrid" AutoGenerateColumns="False" Margin="5"
+                      CanUserAddRows="False" IsReadOnly="True" SelectionChanged="OrdersGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}" Width="*"/>
+                    <DataGridTextColumn Header="Сумма" Binding="{Binding Cost}" Width="*"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" Width="*"/>
+                    <DataGridTextColumn Header="Поставщик" Binding="{Binding Supplier.Name}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </Grid>
+    </Grid>
+</Window>
